@@ -23,7 +23,7 @@ class LoadDimensionOperator(BaseOperator):
 
   def execute(self, context):
         self.log.info('Get Credentials')
-        redshift = PostgresHook(postgres_conn_id=self.redshift_conn_id)
+        redshift = PostgresHook(postgres_conn_id=self.conn_id)
 
         # remove data from table
         if not self.append_only:
